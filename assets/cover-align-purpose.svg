@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Hand-drawn arrows: scattered on the left, coming into alignment on the right">
-  <rect width="1280" height="720" fill="#EFEFEB"/>
+  <rect width="1280" height="720" fill="#F1F1F0"/>
   <!-- scattered arrows, left -->
   <g stroke="#3A4374" stroke-width="10" stroke-linecap="round" fill="none" opacity=".5">
     <path d="M150 190 C 200 170, 240 210, 290 186"/><path d="M268 170 L 292 185 L 264 202"/>

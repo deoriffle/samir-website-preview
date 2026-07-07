@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Hand-drawn compass sitting calm amid a storm of busy scribbles">
-  <rect width="1280" height="720" fill="#EFEFEB"/>
+  <rect width="1280" height="720" fill="#F1F1F0"/>
   <!-- busy scribbles around the edges -->
   <path d="M90 150 C 150 90, 210 170, 270 110 S 380 130, 420 96" fill="none" stroke="#3A4374" stroke-width="9" stroke-linecap="round" opacity=".35"/>
   <path d="M880 90 C 940 140, 1000 70, 1060 120 S 1160 110, 1200 150" fill="none" stroke="#3A4374" stroke-width="9" stroke-linecap="round" opacity=".3"/>

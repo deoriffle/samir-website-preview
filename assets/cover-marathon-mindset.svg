@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Hand-drawn dashed path winding over hills from a start pin to a finish flag">
-  <rect width="1280" height="720" fill="#EFEFEB"/>
+  <rect width="1280" height="720" fill="#F1F1F0"/>
   <!-- gentle hills -->
   <path d="M40 560 C 240 470, 420 610, 640 540 S 1040 470, 1240 550" fill="none" stroke="#F09B00" stroke-width="11" stroke-linecap="round" opacity=".55"/>
   <!-- winding dashed path -->
