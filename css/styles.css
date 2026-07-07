@@ -282,6 +282,23 @@ p + p { margin-top: 1.1em; }
 
 .nav .btn { padding: .8125rem 1.375rem; font-size: .9375rem; }
 
+.nav-cart {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--navy-deep);
+  box-shadow: inset 0 0 0 1px var(--line), 0 1px 2px rgba(46, 53, 96, .05);
+  background: var(--card);
+  transition: box-shadow .16s ease-out, background .16s ease-out, transform .16s ease-out;
+}
+.nav-cart svg { width: 19px; height: 19px; }
+@media (hover: hover) and (pointer: fine) {
+  .nav-cart:hover { box-shadow: inset 0 0 0 1px #B9BCC6, 0 2px 6px rgba(46, 53, 96, .07); transform: translateY(-1px); }
+}
+.nav-cart[aria-current="page"] { background: rgba(255, 201, 61, .22); box-shadow: inset 0 0 0 1px rgba(175, 120, 0, .35); }
+
 .nav-toggle {
   position: absolute;
   width: 1px;
@@ -297,7 +314,8 @@ p + p { margin-top: 1.1em; }
 }
 
 @media (max-width: 920px) {
-  .nav { flex-wrap: wrap; gap: 1rem; padding-block: .875rem; min-height: 0; }
+  .nav { flex-wrap: wrap; gap: .75rem; padding-block: .875rem; min-height: 0; }
+  .nav-cart { order: 2; }
   .nav-burger {
     display: flex;
     flex-direction: column;
@@ -1012,4 +1030,33 @@ p + p { margin-top: 1.1em; }
 @media (max-width: 880px) {
   .buy-bar { display: flex; }
   .pdp-page-pad { padding-bottom: 84px; }
+}
+
+
+/* ---------- Cart quick add ---------- */
+
+.quick-add { display: grid; gap: .75rem; max-width: 680px; }
+a.option-card { text-decoration: none; }
+.option-card .opt-buy {
+  font-weight: 800;
+  color: var(--navy-deep);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: .875rem;
+  font-variant-numeric: tabular-nums;
+}
+.option-card .opt-buy .mini-btn {
+  background: var(--amber);
+  color: var(--navy-deep);
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .5625rem .9375rem;
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.32), inset 0 0 0 1px rgba(175,120,0,.26), 0 1px 2px rgba(46,53,96,.08);
+}
+
+@media (max-width: 560px) {
+  .quick-add .option-card { flex-direction: column; align-items: stretch; gap: .75rem; }
+  .quick-add .opt-buy { justify-content: space-between; }
 }
