@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Hand-drawn mountain ridge with a single flag planted at the summit">
-  <rect width="1280" height="720" fill="#F5EFE2"/>
+  <rect width="1280" height="720" fill="#EFEFEB"/>
   <!-- ridge line -->
   <path d="M60 610 C 150 600, 200 560, 262 522 S 360 470, 420 440 C 470 415, 505 370, 560 330 S 640 240, 700 226 C 745 216, 790 258, 840 300 S 930 400, 990 450 C 1060 508, 1130 560, 1220 596"
-        fill="none" stroke="#F0A04B" stroke-width="13" stroke-linecap="round"/>
+        fill="none" stroke="#F09B00" stroke-width="13" stroke-linecap="round"/>
   <!-- summit flag -->
-  <path d="M702 224 L 700 96" fill="none" stroke="#2C3F76" stroke-width="11" stroke-linecap="round"/>
-  <path d="M702 100 C 740 88, 762 118, 806 104 L 802 160 C 760 174, 738 144, 704 154 Z" fill="#FDBE5F" stroke="#2C3F76" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M702 224 L 700 96" fill="none" stroke="#3A4374" stroke-width="11" stroke-linecap="round"/>
+  <path d="M702 100 C 740 88, 762 118, 806 104 L 802 160 C 760 174, 738 144, 704 154 Z" fill="#F5A81C" stroke="#3A4374" stroke-width="9" stroke-linejoin="round"/>
   <!-- tiny dots: the crowd at the base -->
-  <circle cx="128" cy="632" r="9" fill="#2C3F76" opacity=".55"/>
-  <circle cx="170" cy="646" r="9" fill="#2C3F76" opacity=".45"/>
-  <circle cx="212" cy="636" r="9" fill="#2C3F76" opacity=".5"/>
-  <circle cx="1112" cy="628" r="9" fill="#2C3F76" opacity=".5"/>
-  <circle cx="1156" cy="642" r="9" fill="#2C3F76" opacity=".45"/>
+  <circle cx="128" cy="632" r="9" fill="#3A4374" opacity=".55"/>
+  <circle cx="170" cy="646" r="9" fill="#3A4374" opacity=".45"/>
+  <circle cx="212" cy="636" r="9" fill="#3A4374" opacity=".5"/>
+  <circle cx="1112" cy="628" r="9" fill="#3A4374" opacity=".5"/>
+  <circle cx="1156" cy="642" r="9" fill="#3A4374" opacity=".45"/>
   <!-- one figure at the top -->
-  <circle cx="700" cy="196" r="13" fill="#2C3F76"/>
+  <circle cx="700" cy="196" r="13" fill="#3A4374"/>
   <!-- sparkles -->
-  <path d="M960 130 l6 26 26 6 -26 6 -6 26 -6 -26 -26 -6 26 -6 Z" fill="#F0A04B"/>
-  <path d="M270 180 l4.5 19 19 4.5 -19 4.5 -4.5 19 -4.5 -19 -19 -4.5 19 -4.5 Z" fill="#F0A04B" opacity=".7"/>
+  <path d="M960 130 l6 26 26 6 -26 6 -6 26 -6 -26 -26 -6 26 -6 Z" fill="#F09B00"/>
+  <path d="M270 180 l4.5 19 19 4.5 -19 4.5 -4.5 19 -4.5 -19 -19 -4.5 19 -4.5 Z" fill="#F09B00" opacity=".7"/>
 </svg>

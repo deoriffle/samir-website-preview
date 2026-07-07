@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Hand-drawn dashed path winding over hills from a start pin to a finish flag">
-  <rect width="1280" height="720" fill="#F5EFE2"/>
+  <rect width="1280" height="720" fill="#EFEFEB"/>
   <!-- gentle hills -->
-  <path d="M40 560 C 240 470, 420 610, 640 540 S 1040 470, 1240 550" fill="none" stroke="#F0A04B" stroke-width="11" stroke-linecap="round" opacity=".55"/>
+  <path d="M40 560 C 240 470, 420 610, 640 540 S 1040 470, 1240 550" fill="none" stroke="#F09B00" stroke-width="11" stroke-linecap="round" opacity=".55"/>
   <!-- winding dashed path -->
   <path d="M150 600 C 260 520, 380 610, 480 520 S 640 380, 760 400 C 860 418, 900 330, 990 280 S 1090 220, 1130 200"
-        fill="none" stroke="#2C3F76" stroke-width="11" stroke-linecap="round" stroke-dasharray="2 46"/>
+        fill="none" stroke="#3A4374" stroke-width="11" stroke-linecap="round" stroke-dasharray="2 46"/>
   <!-- start pin (purpose-map style) -->
   <path d="M150 512 c -34 0 -56 24 -56 52 c 0 36 40 62 56 88 c 16 -26 56 -52 56 -88 c 0 -28 -22 -52 -56 -52 Z"
-        fill="#FDBE5F" stroke="#2C3F76" stroke-width="9" stroke-linejoin="round"/>
-  <circle cx="150" cy="566" r="16" fill="#FBF8F1" stroke="#2C3F76" stroke-width="8"/>
+        fill="#F5A81C" stroke="#3A4374" stroke-width="9" stroke-linejoin="round"/>
+  <circle cx="150" cy="566" r="16" fill="#FBF8F1" stroke="#3A4374" stroke-width="8"/>
   <!-- finish flag -->
-  <path d="M1132 196 L 1130 84" stroke="#2C3F76" stroke-width="10" stroke-linecap="round" fill="none"/>
-  <path d="M1132 88 h 84 v 56 h -84 Z" fill="#FBF8F1" stroke="#2C3F76" stroke-width="8" stroke-linejoin="round"/>
-  <path d="M1132 88 h 21 v 14 h -21 Z M1174 88 h 21 v 14 h -21 Z M1153 102 h 21 v 14 h -21 Z M1195 102 h 21 v 14 h -21 Z M1132 116 h 21 v 14 h -21 Z M1174 116 h 21 v 14 h -21 Z M1153 130 h 21 v 14 h -21 Z M1195 130 h 21 v 14 h -21 Z" fill="#2C3F76"/>
+  <path d="M1132 196 L 1130 84" stroke="#3A4374" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <path d="M1132 88 h 84 v 56 h -84 Z" fill="#FBF8F1" stroke="#3A4374" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M1132 88 h 21 v 14 h -21 Z M1174 88 h 21 v 14 h -21 Z M1153 102 h 21 v 14 h -21 Z M1195 102 h 21 v 14 h -21 Z M1132 116 h 21 v 14 h -21 Z M1174 116 h 21 v 14 h -21 Z M1153 130 h 21 v 14 h -21 Z M1195 130 h 21 v 14 h -21 Z" fill="#3A4374"/>
   <!-- sparkle near finish -->
-  <path d="M1020 120 l6 24 24 6 -24 6 -6 24 -6 -24 -24 -6 24 -6 Z" fill="#F0A04B"/>
+  <path d="M1020 120 l6 24 24 6 -24 6 -6 24 -6 -24 -24 -6 24 -6 Z" fill="#F09B00"/>
 </svg>
