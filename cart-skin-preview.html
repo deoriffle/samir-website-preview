@@ -889,7 +889,64 @@ body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout .e-checkout_
   border-radius: 20px !important;
 }
 
-</style></head>
+
+/* ==========================================================================
+   v3 additions: checkout page heading, order-review nesting, loading overlay,
+   footer typography
+   ========================================================================== */
+
+/* Page headings on checkout (and any store page): Mulish 800, never italic */
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout .elementor-widget-heading .elementor-heading-title,
+body.woocommerce-page.woocommerce-page.woocommerce-page .elementor-widget-heading .elementor-heading-title {
+  font-family: "Mulish", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--tn-navy-deep, #2E3560) !important;
+}
+
+/* "Your Order" heading */
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout #order_review_heading,
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout .e-checkout__order_review h2 {
+  color: var(--tn-navy, #3A4374) !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+}
+
+/* Kill the double-card: the table inside the order-review card goes flat */
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout #order_review table.shop_table,
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout .e-checkout__order_review table.shop_table {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout #order_review .woocommerce-Price-amount {
+  color: var(--tn-navy-deep, #2E3560) !important;
+  font-variant-numeric: tabular-nums;
+}
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout #order_review th,
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout #order_review td {
+  border-color: var(--tn-line, rgba(46,53,96,.12)) !important;
+  color: var(--tn-ink, #454B68) !important;
+}
+
+/* Softer AJAX loading state (the update-totals overlay) */
+body.woocommerce-cart .blockUI.blockOverlay,
+body.woocommerce-checkout .blockUI.blockOverlay {
+  background: rgba(250, 250, 249, .55) !important;
+}
+
+/* Footer typography: keep the site's links, drop the handwriting for UI text */
+body.woocommerce-cart .elementor-location-footer,
+body.woocommerce-cart .elementor-location-footer a,
+body.woocommerce-checkout .elementor-location-footer,
+body.woocommerce-checkout .elementor-location-footer a {
+  font-family: "Mulish", sans-serif !important;
+  color: var(--tn-ink, #454B68) !important;
+}
+
+</style><style id="tn-demo-only">.blockUI{display:none !important;} .processing{opacity:1 !important;}</style></head>
 <body class="wp-singular page-template-default page page-id-429 wp-custom-logo wp-theme-hello-biz wp-child-theme-hello-biz-child theme-hello-biz woocommerce-cart woocommerce-page woocommerce-no-js woo-variation-swatches wvs-behavior-blur wvs-theme-hello-biz-child wvs-show-label wvs-tooltip ehbiz-default woocommerce  shopengine-template shopengine-cart elementor-default elementor-kit-347 elementor-page elementor-page-429">
 		<header data-elementor-type="header" data-elementor-id="419" class="elementor elementor-419 elementor-location-header" data-elementor-post-type="elementor_library">
 			<div class="elementor-element elementor-element-8c55e90 e-con-full e-flex e-con e-parent" data-id="8c55e90" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
