@@ -1,7 +1,10 @@
 /* ==========================================================================
-   Ten Nuggets storefront skin for samirdeokuliar.co (WooCommerce)
+   Ten Nuggets storefront skin for samirdeokuliar.co (WooCommerce) — v2
    Paste into: WordPress admin → Appearance → Customize → Additional CSS
-   Scope: cart, checkout, and store buttons. Safe to remove at any time.
+   (replace any earlier version entirely), then Publish.
+   v2 adds Elementor Pro cart-widget overrides — the theme styles the cart via
+   .elementor-429 .elementor-element-66f7ef0 selectors, which beat generic rules.
+   Safe to remove at any time.
    ========================================================================== */
 
 /* ---------- Tokens ---------- */
@@ -196,3 +199,168 @@ body.woocommerce-checkout .woocommerce {
 }
 .woocommerce-message::before,
 .woocommerce-info::before { color: var(--tn-amber-press) !important; }
+
+
+/* ==========================================================================
+   Elementor Pro cart widget overrides (page 429 / element 66f7ef0)
+   The "body" prefix + their own selector chain outranks the theme everywhere.
+   The repeated-class fallbacks keep working even if the page is rebuilt.
+   ========================================================================== */
+
+/* Page title (the "CART" heading) */
+body .elementor-429 .elementor-widget-heading .elementor-heading-title,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .elementor-heading-title {
+  font-family: "Mulish", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--tn-navy-deep, #2E3560) !important;
+}
+
+/* Cart sections become soft cards */
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .e-cart-section,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .e-cart-section {
+  background: var(--tn-card, #fff) !important;
+  border: 1px solid var(--tn-line, rgba(46,53,96,.12)) !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 1px 2px rgba(46, 53, 96, .04),
+    0 4px 12px -2px rgba(46, 53, 96, .05),
+    0 16px 32px -12px rgba(46, 53, 96, .06) !important;
+}
+
+/* Totals heading */
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .cart_totals h2,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .cart_totals h2 {
+  color: var(--tn-navy, #3A4374) !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Checkout button: the sunflower pill */
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .checkout-button,
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .woocommerce .wc-proceed-to-checkout .checkout-button,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .wc-proceed-to-checkout .checkout-button {
+  background: var(--tn-amber, #FFC93D) !important;
+  color: var(--tn-navy-deep, #2E3560) !important;
+  font-weight: 700 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  text-transform: none !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .32),
+    inset 0 -1px 0 rgba(150, 100, 0, .20),
+    inset 0 0 0 1px rgba(175, 120, 0, .26),
+    0 1px 2px rgba(46, 53, 96, .10),
+    0 4px 12px -4px rgba(240, 175, 0, .40) !important;
+  transition: transform .16s ease-out, background .16s ease-out !important;
+}
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .checkout-button:hover,
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .woocommerce .wc-proceed-to-checkout .checkout-button:hover,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .wc-proceed-to-checkout .checkout-button:hover {
+  background: #FFD159 !important;
+  color: var(--tn-navy-deep, #2E3560) !important;
+  transform: translateY(-1px);
+}
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .checkout-button:active,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .wc-proceed-to-checkout .checkout-button:active {
+  transform: scale(.97);
+  background: var(--tn-amber-press, #F0B426) !important;
+}
+
+/* Apply coupon + update cart: quiet white pill */
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .shop_table .button,
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .e-apply-coupon,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .shop_table .button {
+  background: var(--tn-card, #fff) !important;
+  color: var(--tn-navy, #3A4374) !important;
+  font-weight: 700 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  text-transform: none !important;
+  box-shadow:
+    inset 0 0 0 1px #D8DAD9,
+    0 1px 2px rgba(46, 53, 96, .05) !important;
+}
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .shop_table .button:hover,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .shop_table .button:hover {
+  background: var(--tn-paper, #FAFAF9) !important;
+  color: var(--tn-navy, #3A4374) !important;
+  box-shadow: inset 0 0 0 1px #B9BCC6, 0 2px 6px rgba(46, 53, 96, .07) !important;
+}
+
+/* Table internals: hairlines, navy headers, tabular prices, product links */
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 table.shop_table th,
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 table.shop_table td,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart table.shop_table th,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart table.shop_table td {
+  border-color: var(--tn-line, rgba(46,53,96,.12)) !important;
+}
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 table.shop_table th,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart table.shop_table th {
+  color: var(--tn-navy, #3A4374) !important;
+  font-weight: 700 !important;
+}
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 .woocommerce-Price-amount,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .woocommerce-Price-amount {
+  color: var(--tn-navy-deep, #2E3560) !important;
+  font-variant-numeric: tabular-nums;
+}
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 td.product-name a,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart td.product-name a {
+  color: var(--tn-navy, #3A4374) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+/* Product thumbnails on a soft stage */
+body .elementor-429 .elementor-element.elementor-element-66f7ef0 td.product-thumbnail img,
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart td.product-thumbnail img {
+  background: #F1F1F0 !important;
+  border: 1px solid var(--tn-line, rgba(46,53,96,.12)) !important;
+  border-radius: 10px !important;
+  padding: 4px !important;
+}
+
+/* Notice banner + its "Continue shopping" button */
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .woocommerce-message,
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout .woocommerce-message {
+  background: var(--tn-card, #fff) !important;
+  border: 1px solid var(--tn-line, rgba(46,53,96,.12)) !important;
+  border-top-color: var(--tn-amber, #FFC93D) !important;
+  border-radius: 12px !important;
+  color: var(--tn-ink, #454B68) !important;
+  box-shadow: 0 1px 2px rgba(46, 53, 96, .05) !important;
+}
+body.woocommerce-cart.woocommerce-cart.woocommerce-cart .woocommerce-message a.button,
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout .woocommerce-message a.button {
+  background: var(--tn-card, #fff) !important;
+  color: var(--tn-navy, #3A4374) !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  box-shadow: inset 0 0 0 1px #D8DAD9, 0 1px 2px rgba(46, 53, 96, .05) !important;
+}
+
+/* Checkout page: place-order button + review card (repeated-class boost) */
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout #place_order {
+  background: var(--tn-amber, #FFC93D) !important;
+  color: var(--tn-navy-deep, #2E3560) !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .32),
+    inset 0 -1px 0 rgba(150, 100, 0, .20),
+    inset 0 0 0 1px rgba(175, 120, 0, .26),
+    0 1px 2px rgba(46, 53, 96, .10),
+    0 4px 12px -4px rgba(240, 175, 0, .40) !important;
+}
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout #order_review,
+body.woocommerce-checkout.woocommerce-checkout.woocommerce-checkout .e-checkout__container .e-checkout__column-end section {
+  background: var(--tn-card, #fff) !important;
+  border: 1px solid var(--tn-line, rgba(46,53,96,.12)) !important;
+  border-radius: 20px !important;
+}
