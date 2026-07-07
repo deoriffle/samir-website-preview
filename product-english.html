@@ -71,18 +71,18 @@
           <fieldset class="option-cards">
             <legend>Cover</legend>
             <label class="option-card">
-              <input type="radio" name="cover" value="paperback" checked data-price="₹600" data-href="https://samirdeokuliar.co/cart/?add-to-cart=5465">
+              <input type="radio" name="cover" value="paperback" checked data-price="₹600" data-vid="5465" data-variant="Paperback" data-rupees="600" data-href="https://samirdeokuliar.co/cart/?add-to-cart=5465">
               <b>Paperback<span class="opt-note">Both books, softcover set</span></b>
               <span class="opt-price">₹600</span>
             </label>
             <label class="option-card">
-              <input type="radio" name="cover" value="hardcover" data-price="₹1,250" data-href="https://samirdeokuliar.co/cart/?add-to-cart=5464">
+              <input type="radio" name="cover" value="hardcover" data-price="₹1,250" data-vid="5464" data-variant="Premium Hardcover" data-rupees="1250" data-href="https://samirdeokuliar.co/cart/?add-to-cart=5464">
               <b>Premium hardcover<span class="opt-note">Cloth-feel hard covers in a slipcase-style case</span></b>
               <span class="opt-price">₹1,250</span>
             </label>
           </fieldset>
 
-          <a class="btn btn-primary" id="buy-btn" href="https://samirdeokuliar.co/cart/?add-to-cart=5465" target="_blank" rel="noopener">Buy Now — ₹600</a>
+          <a class="btn btn-primary" id="buy-btn" href="https://samirdeokuliar.co/cart/?add-to-cart=5465" data-add-vid="5465" data-add-title="The Ten Nuggets Journey — English Set" data-add-variant="Paperback" data-add-price="600">Add to Cart — ₹600</a>
           <a class="btn btn-ghost" href="https://wa.me/919667245010?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Ten%20Nuggets%20Journey%20English%20set." target="_blank" rel="noopener">Order on WhatsApp</a>
           <p class="trust-mini">Ships across India · <a href="refunds.html">Easy returns</a> · Secure checkout on samirdeokuliar.co</p>
 
@@ -322,7 +322,7 @@
 <!-- Mobile buy bar -->
 <div class="buy-bar" aria-hidden="true">
   <span class="bb-price" id="bb-price">₹600</span>
-  <a class="btn btn-primary" id="bb-buy" href="https://samirdeokuliar.co/cart/?add-to-cart=5465" target="_blank" rel="noopener">Buy Now</a>
+  <a class="btn btn-primary" id="bb-buy" href="https://samirdeokuliar.co/cart/?add-to-cart=5465" data-add-vid="5465" data-add-title="The Ten Nuggets Journey — English Set" data-add-variant="Paperback" data-add-price="600">Add to Cart</a>
 </div>
 
 
@@ -425,9 +425,15 @@ document.querySelectorAll('input[name="cover"]').forEach(function (radio) {
     document.getElementById('pdp-price').textContent = radio.dataset.price;
     document.getElementById('bb-price').textContent = radio.dataset.price;
     var buy = document.getElementById('buy-btn');
+    var bb = document.getElementById('bb-buy');
     buy.href = radio.dataset.href;
-    buy.textContent = 'Buy Now — ' + radio.dataset.price;
-    document.getElementById('bb-buy').href = radio.dataset.href;
+    buy.textContent = 'Add to Cart — ' + radio.dataset.price;
+    [buy, bb].forEach(function (el) {
+      el.setAttribute('data-add-vid', radio.dataset.vid);
+      el.setAttribute('data-add-variant', radio.dataset.variant);
+      el.setAttribute('data-add-price', radio.dataset.rupees);
+    });
+    bb.href = radio.dataset.href;
   });
 });
 document.querySelectorAll('.gallery-thumbs button').forEach(function (btn) {
@@ -440,5 +446,6 @@ document.querySelectorAll('.gallery-thumbs button').forEach(function (btn) {
   });
 });
 </script>
+<script src="js/cart.js" defer></script>
 </body>
 </html>

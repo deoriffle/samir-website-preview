@@ -46,50 +46,35 @@
       <div class="section-head">
         <span class="eyebrow">almost there</span>
         <h1 class="display" style="font-size: clamp(2.1rem, 4.4vw, 3.1rem);">Your Cart</h1>
-        <p class="lead">Everything you add on this site goes straight into your secure cart on samirdeokuliar.co — pick up right where you left off.</p>
       </div>
 
-      <div class="panel compact split" style="max-width: 880px;">
-        <div>
-          <h2 class="title" style="font-size: clamp(1.375rem, 2.3vw, 1.75rem);">Ready when you are.</h2>
-          <p class="mt-2">Your cart, checkout, and payment all happen on the secure store. Open your cart to review quantities, apply coupons, and check out.</p>
-          <div class="btn-row mt-3">
-            <a class="btn btn-primary" href="https://samirdeokuliar.co/cart/" target="_blank" rel="noopener">Open My Cart</a>
-            <a class="btn btn-ghost" href="https://samirdeokuliar.co/checkout/" target="_blank" rel="noopener">Proceed to Checkout</a>
-          </div>
-          <p class="trust-mini mt-3">Ships across India · <a href="refunds.html">Easy returns</a> · Secure checkout on samirdeokuliar.co</p>
-        </div>
-        <figure>
-          <img src="assets/English-Set.png" alt="The Ten Nuggets Journey slipcase set" width="623" height="976" style="max-width: min(220px, 100%); margin-inline: auto;">
-        </figure>
-      </div>
+      <div id="cart-app"></div>
 
       <div class="section-head" style="margin-top: clamp(3rem, 6vw, 4.5rem);">
         <span class="eyebrow">quick add</span>
         <h2 class="title" style="font-size: clamp(1.5rem, 2.6vw, 1.9rem);">Add a set in one tap.</h2>
-        <p class="measure">Each button drops the set straight into your cart on the store.</p>
       </div>
 
       <div class="quick-add">
-        <a class="option-card" href="https://samirdeokuliar.co/cart/?add-to-cart=5465" target="_blank" rel="noopener">
-          <b>English set — paperback<span class="opt-note">Getting There + Staying There</span></b>
+        <a class="option-card" href="#" data-add-vid="5465" data-add-stay="1" data-add-title="The Ten Nuggets Journey — English Set" data-add-variant="Paperback" data-add-price="600">
+          <b>English Set — Paperback<span class="opt-note">Getting There + Staying There</span></b>
           <span class="opt-buy">₹600 <span class="mini-btn">Add to Cart</span></span>
         </a>
-        <a class="option-card" href="https://samirdeokuliar.co/cart/?add-to-cart=5464" target="_blank" rel="noopener">
-          <b>English set — premium hardcover<span class="opt-note">Cloth-feel hard covers, boxed</span></b>
+        <a class="option-card" href="#" data-add-vid="5464" data-add-stay="1" data-add-title="The Ten Nuggets Journey — English Set" data-add-variant="Premium Hardcover" data-add-price="1250">
+          <b>English Set — Premium Hardcover<span class="opt-note">Cloth-feel hard covers, boxed</span></b>
           <span class="opt-buy">₹1,250 <span class="mini-btn">Add to Cart</span></span>
         </a>
-        <a class="option-card" href="https://samirdeokuliar.co/cart/?add-to-cart=5654" target="_blank" rel="noopener">
-          <b>Hindi set — paperback<span class="opt-note">दस सुनहरी बातों का सफ़र</span></b>
+        <a class="option-card" href="#" data-add-vid="5654" data-add-stay="1" data-add-title="दस सुनहरी बातों का सफ़र — Hindi Set" data-add-variant="Paperback" data-add-price="600">
+          <b>Hindi Set — Paperback<span class="opt-note">दस सुनहरी बातों का सफ़र</span></b>
           <span class="opt-buy">₹600 <span class="mini-btn">Add to Cart</span></span>
         </a>
-        <a class="option-card" href="https://samirdeokuliar.co/cart/?add-to-cart=5642" target="_blank" rel="noopener">
-          <b>Tamil set — paperback<span class="opt-note">பத்து நுணுக்கங்கள் பயணம்</span></b>
+        <a class="option-card" href="#" data-add-vid="5642" data-add-stay="1" data-add-title="பத்து நுணுக்கங்கள் பயணம் — Tamil Set" data-add-variant="Paperback" data-add-price="600">
+          <b>Tamil Set — Paperback<span class="opt-note">பத்து நுணுக்கங்கள் பயணம்</span></b>
           <span class="opt-buy">₹600 <span class="mini-btn">Add to Cart</span></span>
         </a>
       </div>
 
-      <p class="small" style="margin-top: 2rem;">Questions about an order? <a href="refunds.html">Refunds &amp; cancellations</a> · <a href="shipping.html">Shipping</a> · <a href="https://wa.me/919667245010" target="_blank" rel="noopener">WhatsApp us</a></p>
+      <p class="small" style="margin-top: 2rem;">Questions about an order? <a href="refunds.html">Refunds &amp; Cancellations</a> · <a href="shipping.html">Shipping</a> · <a href="https://wa.me/919667245010" target="_blank" rel="noopener">WhatsApp us</a></p>
 
     </div>
   </section>
@@ -188,6 +173,90 @@ document.querySelectorAll('form[data-mailto-subject]').forEach(function (form) {
       encodeURIComponent(form.dataset.mailtoSubject) + '&body=' + encodeURIComponent(lines.join('\n'));
   });
 });
+</script>
+<script src="js/cart.js" defer></script>
+<script>
+(function () {
+  var STORE = 'https://samirdeokuliar.co/cart/?add-to-cart=';
+  var app = document.getElementById('cart-app');
+
+  function inr(n) { return '₹' + n.toLocaleString('en-IN'); }
+  function esc(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+  window.tnRenderCart = function () {
+    var items = window.tnCart.load();
+
+    if (!items.length) {
+      app.innerHTML =
+        '<div class="cart-empty">' +
+        '<span class="eyebrow">nothing here yet</span>' +
+        '<h2 class="title" style="font-size:1.5rem;">Your cart is empty.</h2>' +
+        '<p class="mt-2" style="max-width:38ch;margin-inline:auto;">Two books, ten nuggets each — the journey starts with one set.</p>' +
+        '<div class="btn-row center mt-3" style="justify-content:center;"><a class="btn btn-primary" href="shop.html">Shop the Books</a></div>' +
+        '<p class="small mt-3">Already sent items to the store? <a href="https://samirdeokuliar.co/cart/" target="_blank" rel="noopener">Open the store cart</a>.</p>' +
+        '</div>';
+      return;
+    }
+
+    var subtotal = items.reduce(function (n, i) { return n + i.price * i.qty; }, 0);
+    var lines = items.map(function (i) {
+      return '<div class="cart-line">' +
+        '<div class="cl-title">' + esc(i.title) + '<span class="cl-variant">' + esc(i.variant) + '</span></div>' +
+        '<div class="cl-sub">' + inr(i.price * i.qty) + '</div>' +
+        '<div class="cl-controls">' +
+          '<span class="qty-step">' +
+            '<button type="button" aria-label="Decrease quantity" data-qty="-1" data-vid="' + i.vid + '">−</button>' +
+            '<span>' + i.qty + '</span>' +
+            '<button type="button" aria-label="Increase quantity" data-qty="1" data-vid="' + i.vid + '">+</button>' +
+          '</span>' +
+          '<span class="small">' + inr(i.price) + ' each</span>' +
+          '<button type="button" class="cl-remove" data-remove="' + i.vid + '">Remove</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var checkoutLabel = items.length > 1 ? 'Send to Store Cart (1 of ' + items.length + ')' : 'Proceed to Checkout';
+    var note = items.length > 1
+      ? 'Sets hand off to the secure store one at a time — press once per set, and the store cart collects them all.'
+      : 'Checkout happens on samirdeokuliar.co — your set and quantity carry over.';
+
+    app.innerHTML =
+      '<div class="cart-layout">' +
+        '<div class="cart-lines">' + lines + '</div>' +
+        '<aside class="cart-summary">' +
+          '<h2>Order Summary</h2>' +
+          '<div class="sum-row"><span>Subtotal</span><b>' + inr(subtotal) + '</b></div>' +
+          '<div class="sum-row"><span>Shipping</span><span class="small">calculated at checkout</span></div>' +
+          '<div class="sum-row total"><span>Total</span><b>' + inr(subtotal) + '</b></div>' +
+          '<button type="button" class="btn btn-primary" id="tn-checkout">' + checkoutLabel + '</button>' +
+          '<a class="btn btn-ghost" href="https://samirdeokuliar.co/cart/" target="_blank" rel="noopener">Open Store Cart</a>' +
+          '<p class="handoff-note">' + note + '</p>' +
+        '</aside>' +
+      '</div>';
+  };
+
+  document.addEventListener('click', function (e) {
+    var q = e.target.closest('[data-qty]');
+    if (q) {
+      var items = window.tnCart.load();
+      var it = items.find(function (i) { return i.vid === q.getAttribute('data-vid'); });
+      if (it) window.tnCart.setQty(it.vid, it.qty + parseInt(q.getAttribute('data-qty'), 10));
+      return;
+    }
+    var r = e.target.closest('[data-remove]');
+    if (r) { window.tnCart.remove(r.getAttribute('data-remove')); return; }
+    if (e.target.closest('#tn-checkout')) {
+      var c = window.tnCart.load();
+      if (!c.length) return;
+      var i = c[0];
+      window.open(STORE + i.vid + '&quantity=' + i.qty, 'samirstore');
+      window.tnCart.save(c.slice(1));
+    }
+  });
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', window.tnRenderCart);
+  else window.tnRenderCart();
+})();
 </script>
 </body>
 </html>
