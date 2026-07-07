@@ -535,7 +535,7 @@ p + p { margin-top: 1.1em; }
 /* ---------- Footer ---------- */
 
 .site-footer {
-  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+  background: linear-gradient(180deg, var(--navy-deep) 0%, #272D52 100%);
   color: rgba(247, 247, 245, .82);
   margin-top: var(--section-pad);
 }
