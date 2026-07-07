@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Hand-drawn compass sitting calm amid a storm of busy scribbles">
+  <rect width="1280" height="720" fill="#F5EFE2"/>
+  <!-- busy scribbles around the edges -->
+  <path d="M90 150 C 150 90, 210 170, 270 110 S 380 130, 420 96" fill="none" stroke="#2C3F76" stroke-width="9" stroke-linecap="round" opacity=".35"/>
+  <path d="M880 90 C 940 140, 1000 70, 1060 120 S 1160 110, 1200 150" fill="none" stroke="#2C3F76" stroke-width="9" stroke-linecap="round" opacity=".3"/>
+  <path d="M80 590 C 140 640, 200 560, 260 620 S 350 600, 400 640" fill="none" stroke="#2C3F76" stroke-width="9" stroke-linecap="round" opacity=".3"/>
+  <path d="M900 620 C 960 570, 1020 650, 1080 590 S 1170 620, 1210 580" fill="none" stroke="#2C3F76" stroke-width="9" stroke-linecap="round" opacity=".35"/>
+  <!-- compass body (slightly wobbly circle) -->
+  <path d="M640 200 C 735 202, 806 268, 808 360 C 810 452, 738 520, 642 522 C 546 524, 472 454, 472 362 C 472 268, 545 198, 640 200 Z"
+        fill="#FBF8F1" stroke="#F0A04B" stroke-width="13" stroke-linecap="round"/>
+  <!-- needle -->
+  <path d="M700 288 L 664 372 L 580 434 L 616 348 Z" fill="#FDBE5F" stroke="#2C3F76" stroke-width="9" stroke-linejoin="round"/>
+  <circle cx="640" cy="361" r="12" fill="#2C3F76"/>
+  <!-- cardinal tick -->
+  <path d="M640 214 L 640 240" stroke="#2C3F76" stroke-width="9" stroke-linecap="round"/>
+  <!-- sparkle -->
+  <path d="M980 300 l6 26 26 6 -26 6 -6 26 -6 -26 -26 -6 26 -6 Z" fill="#F0A04B"/>
+</svg>
